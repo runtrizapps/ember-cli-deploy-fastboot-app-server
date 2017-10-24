@@ -30,7 +30,7 @@
   },
   "ember-addon": {},
   "dependencies": {
-    "adm-zip": "^0.4.7",
+    "archiver": "^2.1.0",
     "ember-cli-deploy-plugin": "^0.2.9",
     "rimraf": "^2.6.1",
     "rsvp": "^3.6.0"
