@@ -75,16 +75,15 @@ module.exports = {
               // zlib: { level: 9 } // Sets the compression level.
           });
 
-          output.on('end', () => resolve());
+          output.on('close', () => resolve({
+            fastbootArchiveName: archiveName,
+            fastbootArchivePath: archivePath
+          }));
 
           archive.pipe(output);
           archive.directory(distDir, 'dist');
           archive.finalize();
 
-          return {
-            fastbootArchiveName: archiveName,
-            fastbootArchivePath: archivePath
-          };
         });
       }
     });
